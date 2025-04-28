@@ -1,54 +1,159 @@
-# React + TypeScript + Vite
+# Deep Web Researcher - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend application for the **Deep Web Researcher** project, a powerful tool that conducts comprehensive research on any topic, performs fact-checking, and generates polished content in various styles.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Interactive orbital search interface
+- Three content styles: Blog Post, Detailed Report, and Executive Summary
+- Real-time research progress tracking
+- Content library management
+- Draft editing and organization
+- Responsive design for desktop and mobile
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Prerequisites
+- **Node.js** (v16.x or higher)
+- **npm** (v8.x or higher)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## Installation
+
+### Clone the repository
+```bash
+git clone https://github.com/sahilsaurav2507/DeepWebResearcher.git
+cd DeepWebResearcher/ChatBot
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Install dependencies
+```bash
+npm install
 ```
+
+---
+
+## Required Dependencies
+
+### Core Libraries
+```bash
+npm install react react-dom react-router-dom framer-motion
+```
+
+### UI Components & Styling
+```bash
+npm install @radix-ui/react-dialog @radix-ui/react-label @radix-ui/react-select @radix-ui/react-slot @radix-ui/react-toast
+npm install class-variance-authority clsx tailwindcss-animate lucide-react
+npm install tailwindcss postcss autoprefixer
+npm install react-icons
+```
+
+### Rich Text Editing
+```bash
+npm install slate slate-react slate-history
+```
+
+### Utilities & Types
+```bash
+npm install next-themes
+npm install @types/node @types/react @types/react-dom typescript
+```
+
+---
+
+## Configuration
+
+Create a `.env` file in the root directory and add:
+```env
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+> Adjust the API URL if your backend is running on a different port.
+
+---
+
+## Running the Application
+
+### Start the development server
+```bash
+npm run dev
+```
+
+Open your browser and navigate to:
+```
+http://localhost:5173
+```
+
+---
+
+## Building for Production
+
+### Create a production build
+```bash
+npm run build
+```
+
+### Preview the production build locally
+```bash
+npm run preview
+```
+
+---
+
+## Project Structure
+
+| Folder | Description |
+|:-------|:------------|
+| `/src` | Main source code |
+| `/components` | Reusable UI components |
+| `/pages` | Page components |
+| `/services` | API services |
+| `/types` | TypeScript type definitions |
+| `/utils` | Utility functions |
+| `/hooks` | Custom React hooks |
+| `/styles` | Global styles and theme configuration |
+
+---
+
+## Key Components
+- **SearchHub**: Interactive orbital search interface
+- **EditorPage**: Content editing and management
+- **LibraryPage**: Draft organization and browsing
+- **ResearchLoadingScreen**: Engaging loading experience showing research progress
+
+---
+
+## Backend Integration
+
+The frontend communicates with the Deep Web Researcher backend API for:
+- Starting research queries
+- Retrieving research results
+- Managing drafts and library content
+- Organizing content into playlists
+
+> Ensure the backend server is running before using the application. See the backend README for setup instructions.
+
+---
+
+## Customization
+- Modify the theme in `src/components/theme-provider.tsx`
+- Adjust the search categories in `src/components/SearchHub.tsx`
+- Customize the research steps in `src/components/ResearchLoadingScreen.tsx`
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## Acknowledgements
+- Built with **React**
+- UI components powered by **shadcn/ui**
+- Animations with **Framer Motion**
+- Icons from **Lucide** and **React Icons**
+
+---
