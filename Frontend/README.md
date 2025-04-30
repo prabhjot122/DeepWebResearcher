@@ -45,6 +45,7 @@ npm install react react-dom react-router-dom framer-motion
 ### UI Components & Styling
 ```bash
 npm install @radix-ui/react-dialog @radix-ui/react-label @radix-ui/react-select @radix-ui/react-slot @radix-ui/react-toast
+npx shadcn@latest init
 npm install class-variance-authority clsx tailwindcss-animate lucide-react
 npm install tailwindcss postcss autoprefixer
 npm install react-icons
