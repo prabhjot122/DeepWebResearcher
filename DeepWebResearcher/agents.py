@@ -9,7 +9,7 @@ from typing import List, Dict, Any, TypedDict, Annotated, Literal
 import json
 import re
 from langgraph.graph import StateGraph, END
-from rag import get_rag_pipeline
+from DeepWebResearcher.DeepWebResearcher.rag import get_rag_pipeline
 
 
 load_dotenv()
@@ -532,7 +532,7 @@ if __name__ == "__main__":
     if use_pdf:
         pdf_path = input("Enter the path to your PDF file: ")
         try:
-            from rag import get_rag_pipeline
+            from DeepWebResearcher.DeepWebResearcher.rag import get_rag_pipeline
             rag_pipeline = get_rag_pipeline()
             rag_pipeline.process_pdf(pdf_path, {"source": "user_upload"})
             pdf_context = rag_pipeline.get_relevant_context(user_query)
