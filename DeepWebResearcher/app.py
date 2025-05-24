@@ -8,7 +8,7 @@ import json
 import os
 from werkzeug.utils import secure_filename
 from draftagent import conduct_research_workflow, select_content_style
-from DeepWebResearcher.DeepWebResearcher.rag import get_rag_pipeline
+from rag import get_rag_pipeline
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
